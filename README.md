@@ -5,7 +5,7 @@ My [Homebridge] set up with Docker. You can use it too!
 ## Prerequisites
 
 You'll need `git`, `docker` (and a working Docker host), and `docker-compose` to
-get this running. 
+get this running.
 
 ## Config
 
