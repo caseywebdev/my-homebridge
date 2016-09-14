@@ -1,0 +1,12 @@
+#!/bin/bash -e
+
+# Start dbus daemon
+rm -fr /var/run/dbus/pid
+dbus-daemon --system
+
+# Start avahi daemon
+avahi-daemon -D
+
+# Start homebridge
+node etc/config.js > .homebridge/config.json
+exec node_modules/.bin/homebridge -D -U /code/.homebridge

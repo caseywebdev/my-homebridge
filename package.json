@@ -1,0 +1,8 @@
+{
+  "private": true,
+  "dependencies": {
+    "homebridge": "0.3.4",
+    "homebridge-harmonyhub": "0.1.1",
+    "homebridge-nest": "1.1.2"
+  }
+}
