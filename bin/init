@@ -8,5 +8,5 @@ dbus-daemon --system
 avahi-daemon -D
 
 # Start homebridge
-node etc/config.js > .homebridge/config.json
-exec node_modules/.bin/homebridge -D -U /code/.homebridge
+node etc/config.js > ~/.homebridge/config.json
+exec node_modules/.bin/homebridge
