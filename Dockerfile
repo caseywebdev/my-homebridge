@@ -13,4 +13,7 @@ RUN npm install
 COPY bin /code/bin
 COPY etc /code/etc
 
+ARG VERSION
+ENV VERSION $VERSION
+
 CMD ["/code/bin/init"]
