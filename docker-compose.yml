@@ -1,0 +1,17 @@
+version: '2'
+
+services:
+  data:
+    build: .
+    restart: always
+    network_mode: host
+    volumes:
+      - ./.homebridge:/root/.homebridge
+    environment:
+      HARMONY_IP_ADDRESS:
+      HOMEBRIDGE_PIN:
+      HOMEBRIDGE_USERNAME:
+      NEST_CLIENT_ID:
+      NEST_CLIENT_SECRET:
+      NEST_PIN_CODE:
+      NEST_TOKEN:
