@@ -1,7 +1,0 @@
-#!/usr/bin/env bash -e
-
-curl -sSL build.sey.me | \
-  REF=master \
-  GITHUB_REPO=caseywebdev/my-homebridge \
-  IMAGE_REPO=quay.io/caseywebdev/my-homebridge \
-  bash
