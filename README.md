@@ -51,8 +51,10 @@ version you wish to use, as well as any plugin packages. For example:
 
 ## Run
 
+From the project root, simply run:
+
 ```bash
-docker-compose up --build -d
+bin/run
 ```
 
 If you make any changes to your `config.json` or `package.json`, simply re-run
