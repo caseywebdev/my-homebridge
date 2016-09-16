@@ -11,10 +11,6 @@ RUN apt-get update && \
 WORKDIR /code
 
 COPY bin/npm-install-with-retry /code/bin/npm-install-with-retry
-
-ENV HOMEBRIDGE_VERSION=0.3.4
-RUN bin/npm-install-with-retry homebridge@$HOMEBRIDGE_VERSION
-
 COPY package.json /code/package.json
 RUN bin/npm-install-with-retry
 
