@@ -2,7 +2,7 @@
 
 tries=0
 until [ $tries -ge 5 ]; do
-  npm install "$@" && break
+  npm install && break
   npm cache clean
   tries=$[$n+1]
 done
