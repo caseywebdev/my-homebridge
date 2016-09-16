@@ -3,13 +3,23 @@ FROM hypriot/rpi-node:6.5.0
 RUN apt-get update && \
     apt-get install -y avahi-daemon libavahi-compat-libdnssd-dev && \
     mkdir -p /var/run/dbus && \
-    sed -i 's/#enable-dbus=yes/enable-dbus=yes/' /etc/avahi/avahi-daemon.conf
+    sed -i \
+      -e 's/#enable-dbus=yes/enable-dbus=yes/' \
+      -e 's/rlimit-nproc=3/#rlimit-nproc=3/' \
+      /etc/avahi/avahi-daemon.conf
 
 WORKDIR /code
 
-# XXX: The tarball for mdns@2.3.3 is corrupted, so manually install 2.3.2
-# instead. Self note: check this later to see if mdn > 2.3.3 has this issue.
-RUN npm install mdns@2.3.2
+ENV HOMEBRIDGE_VERSION=0.3.4
+RUN bash -c ' \
+      tries=0; \
+      until [ $tries -ge 5 ]; do \
+        npm install homebridge@$HOMEBRIDGE_VERSION && break; \
+        npm cache clean; \
+        tries=$[$n+1]; \
+      done \
+    ' && \
+    npm rebuild
 
 COPY package.json /code/package.json
 RUN npm install
