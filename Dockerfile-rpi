@@ -10,19 +10,13 @@ RUN apt-get update && \
 
 WORKDIR /code
 
+COPY bin/npm-install-with-retry /code/bin/npm-install-with-retry
+
 ENV HOMEBRIDGE_VERSION=0.3.4
-RUN bash -c ' \
-      tries=0; \
-      until [ $tries -ge 5 ]; do \
-        npm install homebridge@$HOMEBRIDGE_VERSION && break; \
-        npm cache clean; \
-        tries=$[$n+1]; \
-      done \
-    ' && \
-    npm rebuild
+RUN bin/npm-install-with-retry homebridge@$HOMEBRIDGE_VERSION
 
 COPY package.json /code/package.json
-RUN npm install
+RUN bin/npm-install-with-retry
 
 COPY bin/init /code/bin/init
 COPY config.json /root/.homebridge/config.json
