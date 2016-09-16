@@ -12,7 +12,7 @@ get this running.
 First, clone this repo and enter the project directory.
 
 ```bash
-git clone git@github.com:caseywebdev/my-homebridge
+git clone https://github.com/caseywebdev/my-homebridge.git
 cd my-homebridge
 ```
 
