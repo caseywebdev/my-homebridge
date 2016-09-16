@@ -8,11 +8,3 @@ services:
     volumes:
       - ./.homebridge/accessories:/root/.homebridge/accessories
       - ./.homebridge/persist:/root/.homebridge/persist
-    environment:
-      HARMONY_IP_ADDRESS:
-      HOMEBRIDGE_PIN:
-      HOMEBRIDGE_USERNAME:
-      NEST_CLIENT_ID:
-      NEST_CLIENT_SECRET:
-      NEST_PIN_CODE:
-      NEST_TOKEN:
