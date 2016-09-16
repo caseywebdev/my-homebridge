@@ -3,6 +3,8 @@ version: '2'
 services:
   data:
     build: .
+    # Uncomment below to use the ARM-enabled build (works on Raspberry Pi)
+    # dockerfile: Dockerfile-arm
     restart: always
     network_mode: host
     volumes:
