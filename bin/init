@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+
+set -e
 
 # Start dbus daemon (removing any lingering pid file if restarting)
 rm -fr /var/run/dbus/pid
