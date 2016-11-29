@@ -16,4 +16,5 @@ RUN npm install
 COPY bin/init /code/bin/init
 COPY config.json /root/.homebridge/config.json
 
+ENTRYPOINT []
 CMD ["/code/bin/init"]

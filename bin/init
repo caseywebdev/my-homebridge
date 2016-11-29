@@ -2,8 +2,10 @@
 
 set -e
 
-# Start dbus daemon (removing any lingering pid file if restarting)
-rm -fr /var/run/dbus/pid
+# Remove any lingering pid files.
+rm -fr /var/run/dbus/pid /var/run/avahi-daemon/pid
+
+# Start dbus daemon
 dbus-daemon --system
 
 # Start avahi daemon
