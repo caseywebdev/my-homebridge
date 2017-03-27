@@ -10,7 +10,7 @@ services:
     network_mode: host
     volumes:
       - ./.homebridge:/root/.homebridge
-      - ./bin:/root/code/bin
+      - ./bin:/code/bin
     logging:
       options:
         max-size: 1m
