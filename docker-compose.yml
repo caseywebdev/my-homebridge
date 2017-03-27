@@ -9,7 +9,8 @@ services:
     restart: always
     network_mode: host
     volumes:
-      - ./.homebridge/persist:/root/.homebridge/persist
+      - ./.homebridge:/root/.homebridge
+      - ./bin:/root/code/bin
     logging:
       options:
         max-size: 1m
