@@ -10,7 +10,4 @@ WORKDIR /code
 COPY package.json /code/package.json
 RUN npm install
 
-COPY bin/init /code/bin/init
-COPY config.json /root/.homebridge/config.json
-
 CMD ["/code/bin/init"]

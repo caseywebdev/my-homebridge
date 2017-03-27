@@ -16,7 +16,8 @@ git clone https://github.com/caseywebdev/my-homebridge.git
 cd my-homebridge
 ```
 
-Then, create your `config.json` file in the project root. For example:
+Then, create your `config.json` file in the `.homebridge` directory. For
+example:
 
 **config.json**
 

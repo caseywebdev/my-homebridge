@@ -1,3 +1,27 @@
 #!/usr/bin/env bash
 
-exec docker-compose up --build -d
+set -e
+
+if [ `which docker-compose` ]
+
+# On the host
+then
+  docker-compose stop
+  docker-compose rm -f
+  exec docker-compose up --build -d
+
+# In the container
+else
+
+  # Remove any lingering pid files from a restart.
+  rm -fr /var/run/dbus/pid /var/run/avahi-daemon/pid
+
+  # Start dbus daemon.
+  dbus-daemon --system
+
+  # Start avahi daemon.
+  avahi-daemon -D
+
+  # Start homebridge.
+  exec node_modules/.bin/homebridge
+fi
