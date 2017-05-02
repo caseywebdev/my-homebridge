@@ -10,4 +10,4 @@ WORKDIR /code
 COPY package.json /code/package.json
 RUN npm install
 
-CMD ["/code/bin/init"]
+CMD ["/code/bin/run"]
