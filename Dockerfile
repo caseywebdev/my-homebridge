@@ -1,4 +1,4 @@
-FROM node:7.7.3
+FROM node:8.1.4
 
 RUN apt-get update && \
     apt-get install -y libavahi-compat-libdnssd-dev && \
